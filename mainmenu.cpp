@@ -340,44 +340,51 @@ void viewAll(List_parent &L,List_child &K)
     }
     mainmenu(L,K);
 }
-void reporting(List_parent &L, List_child &K){
+void reporting(List_parent &L, List_child &K)
+{
 
     int thnRumah=9999;
     int maxLuas=0;
-    int jumlah = 0;
-    address_child Q = first_child(K);
-    if (Q==NULL)
-    {
-        cout<<"KOSONG"<<endl;
-    }
-    else
-    {
-        while(Q != NULL)
-        {
-            jumlah++;
-            if (info_child(Q).luas_rumah > maxLuas){
-                maxLuas = info_child(Q).luas_rumah;
-            }
+    int jumlahrmh = 0;
 
-            Q = next_child(Q);
-        }
-        cout<<"Jumlah rumah             = "<<jumlah<<endl;
-        cout<<"Rumah yang paling Luas   = "<<maxLuas<<endl;
-    }
     address_parent P = first_parent(L);
     if(P==NULL)
     {
         cout<<"Perumahan tidak ada"<<endl;
     }
-    else{
-        while (P!=NULL){
-            if (info_parent(P).tahunPembuatan_perumahan < thnRumah){
+    else
+    {
+        while (P!=NULL)
+        {
+            if (info_parent(P).tahunPembuatan_perumahan < thnRumah)
+            {
                 thnRumah = info_parent(P).tahunPembuatan_perumahan;
+
+            }
+            address_child Q = first_child(child(P));
+            if (Q==NULL)
+            {
+                cout<<"KOSONG"<<endl;
+            }
+            else
+            {
+                while(Q != NULL)
+                {
+                    jumlahrmh++;
+                    if (info_child(Q).luas_rumah > maxLuas)
+                    {
+                        maxLuas = info_child(Q).luas_rumah;
+                    }
+
+                    Q = next_child(Q);
+                }
 
             }
             P = next_parent(P);
         }
-        cout<<"Perumahan tertua berdiri pada "<<thnRumah<<endl;
+        cout<<"Jumlah rumah             = "<<jumlahrmh<<endl;
+        cout<<"Rumah yang paling Luas   = "<<maxLuas<<endl;
+        cout<<"Perumahan tertua berdiri pada tahun "<<thnRumah<<endl;
     }
 }
 
