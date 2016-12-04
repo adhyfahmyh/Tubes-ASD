@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1480860879 source:d:\tubes fix\tubesasd\main.cpp
+	<iostream>
+	"list_perumahan.h"
+	"list_rumah.h"
+	"mainmenu.h"
+
+1480827814 d:\tubes fix\tubesasd\mainmenu.h
+	"list_perumahan.h"
+
+1480827121 d:\tubes fix\tubesasd\list_perumahan.h
+	<iostream>
+	"list_rumah.h"
+
+1480787955 d:\tubes fix\tubesasd\list_rumah.h
+	<iostream>
+
+1480861213 source:d:\tubes fix\tubesasd\list_perumahan.cpp
+	"list_perumahan.h"
+
+1480861453 source:d:\tubes fix\tubesasd\list_rumah.cpp
+	"list_rumah.h"
+
+1480863670 source:d:\tubes fix\tubesasd\mainmenu.cpp
+	<iostream>
+	"mainmenu.h"
+	"list_perumahan.h"
+
